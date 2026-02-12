@@ -1,224 +1,147 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>WinningTogether</title>
-  <meta name="description" content="WinningTogether builds collaboration, leadership development, and community for purpose-driven leaders across Europe." />
+
+  <meta name="description" content="WinningTogether develops leaders, strengthens collaboration, and builds communities across Central and Eastern Europe.">
 
   <style>
-    :root{
-      --bg1:#f4f7f8;
-      --bg2:#e8eef2;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#4b5563;
-      --line:rgba(15,23,42,.10);
-      --accent:#1c365d;
-    }
-
-    *{box-sizing:border-box}
-    body{
+    body {
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: radial-gradient(1200px 700px at 20% 10%, var(--bg1), transparent 60%),
-                  radial-gradient(900px 600px at 80% 20%, var(--bg2), transparent 55%),
-                  linear-gradient(135deg, var(--bg1), var(--bg2));
-      min-height:100vh;
+      background: linear-gradient(135deg, #f4f7f8, #e8eef2);
+      color:#0f172a;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:32px 18px;
+      min-height:100vh;
+      padding:30px 16px;
     }
 
-    .wrap{
-      width:min(980px, 100%);
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
+    .container {
+      max-width:900px;
+      width:100%;
+      background:white;
       border-radius:18px;
-      padding:34px 28px;
-      box-shadow: 0 18px 50px rgba(15,23,42,.08);
+      padding:40px 36px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.08);
     }
 
-    .top{
-      display:flex;
-      gap:26px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
+    .logo {
+      width:340px;
+      max-width:100%;
+      display:block;
+      margin:0 auto 25px;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.15));
     }
 
-    .logo{
-      width: 360px;
-      max-width: 100%;
-      height:auto;
-      filter: drop-shadow(0 10px 22px rgba(0,0,0,.14));
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      font-size:13px;
-      color:var(--muted);
-      background:rgba(255,255,255,.7);
-    }
-    .dot{
-      width:8px;height:8px;border-radius:50%;
-      background:var(--accent);
-      opacity:.9;
-    }
-
-    h1{
-      margin:18px 0 10px;
+    h1 {
+      text-align:center;
       font-size:28px;
-      letter-spacing:-.4px;
-      color:var(--accent);
+      line-height:1.4;
+      color:#1c365d;
+      margin-bottom:20px;
     }
 
-    p{
-      margin:10px 0;
-      line-height:1.55;
-      color:var(--muted);
-      font-size:16.5px;
+    .intro {
+      text-align:center;
+      font-size:17px;
+      color:#4b5563;
+      margin-bottom:30px;
+      line-height:1.6;
     }
 
-    .grid{
+    .grid {
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-      margin-top:18px;
-    }
-    @media (max-width: 720px){
-      .grid{grid-template-columns:1fr}
-      .logo{width:320px}
+      grid-template-columns:1fr 1fr;
+      gap:24px;
     }
 
-    .section{
-      border:1px solid var(--line);
+    .section {
+      border:1px solid #e5e7eb;
       border-radius:14px;
-      padding:16px 16px;
-      background:rgba(255,255,255,.6);
+      padding:20px;
+      background:#fafafa;
     }
 
-    .section h2{
-      margin:0 0 8px;
+    .section h2 {
+      margin-top:0;
       font-size:14px;
-      letter-spacing:.3px;
-      text-transform:uppercase;
-      color:var(--accent);
+      letter-spacing:1px;
+      color:#1c365d;
     }
 
-    ul{
-      margin:0;
+    ul {
       padding-left:18px;
-      color:var(--muted);
-      line-height:1.55;
-      font-size:15.5px;
+      margin:0;
+      color:#4b5563;
+      line-height:1.6;
     }
 
-    .footer{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      margin-top:18px;
-      padding-top:16px;
-      border-top:1px solid var(--line);
-    }
-
-    .contact{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      color:var(--muted);
-      font-size:15.5px;
-    }
-
-    a{
-      color:var(--accent);
-      text-decoration:none;
-      border-bottom:1px solid rgba(28,54,93,.25);
-    }
-    a:hover{border-bottom-color:rgba(28,54,93,.6)}
-
-    .small{
-      font-size:13px;
+    .footer {
+      margin-top:30px;
+      padding-top:20px;
+      border-top:1px solid #e5e7eb;
+      text-align:center;
       color:#6b7280;
+      font-size:14px;
     }
 
-    /* Optional: reduce motion */
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto}
+    a {
+      color:#1c365d;
+      text-decoration:none;
+    }
+
+    @media (max-width:700px) {
+      .grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
 
-      <div class="top">
-        <!-- IMPORTANT: name your transparent logo file exactly "logo.png" in the repo -->
-        <img class="logo" src="logo.png" alt="WinningTogether logo" />
+<div class="container">
 
-        <div class="badge" aria-label="Site status">
-          <span class="dot"></span>
-          Website in development
-        </div>
-      </div>
+  <img src="logo.png" class="logo">
 
-      <h1>Collaboration. Leadership. Shared impact.</h1>
+  <h1>
+    Equipping leaders. Strengthening collaboration. Building communities that create lasting impact.
+  </h1>
 
-      <p>
-        WinningTogether is a faith-based, non-denominational Christian initiative focused on leadership development,
-        collaboration, and community building to equip the next generation of leaders across Central and Eastern Europe.
-      </p>
-
-      <div class="grid">
-        <div class="section">
-          <h2>What we do</h2>
-          <ul>
-            <li>Leadership development experiences and practical training</li>
-            <li>Community-building for professionals (digital nomads, creatives, emerging leaders)</li>
-            <li>Tools that spark meaningful dialogue and teamwork</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>What we’re building</h2>
-          <ul>
-            <li>Collaborative gatherings and learning rhythms in Celje and beyond</li>
-            <li>A scalable community platform for connection and shared learning</li>
-            <li>An interactive card-based game (in development) to support dialogue and team growth</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer">
-        <div class="contact">
-          <strong>Contact:</strong>
-          <a href="mailto:hello@winningtogether.eu">hello@winningtogether.eu</a>
-        </div>
-
-        <div class="small">© <span id="y"></span> WinningTogether. All rights reserved.</div>
-      </div>
-
-    </div>
+  <div class="intro">
+    WinningTogether is a faith-based, non-denominational Christian initiative that develops leaders, strengthens collaboration, and builds communities. Our focus is equipping the next generation of purpose-driven leaders across Central and Eastern Europe.
   </div>
 
-  <script>
-    // Auto year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <div class="grid">
+
+    <div class="section">
+      <h2>WHAT WE DO</h2>
+      <ul>
+        <li>Deliver leadership development experiences and practical training</li>
+        <li>Build collaborative communities for professionals, including digital nomads, creatives, and emerging leaders</li>
+        <li>Design tools and environments that foster dialogue, teamwork, and innovation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>WHAT WE’RE BUILDING</h2>
+      <ul>
+        <li>Collaborative gatherings and ongoing learning rhythms in Slovenia and across Europe</li>
+        <li>A scalable community platform that supports connection and shared learning</li>
+        <li>An interactive card-based game (in development) that strengthens communication, reflection, and team growth</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Contact: <a href="mailto:hello@winningtogether.eu">hello@winningtogether.eu</a><br><br>
+    © 2026 WinningTogether. All rights reserved.
+  </div>
+
+</div>
+
 </body>
 </html>
